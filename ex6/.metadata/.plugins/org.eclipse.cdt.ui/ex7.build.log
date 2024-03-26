@@ -1,0 +1,16 @@
+22:51:33 **** Incremental Build of configuration Debug for project ex7 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'clearAllClock':
+../Core/Src/main.c:55:3: warning: implicit declaration of function 'setLow' [-Wimplicit-function-declaration]
+   55 |   setLow(GPODPin[i]);
+      |   ^~~~~~
+../Core/Src/main.c:55:10: error: 'GPODPin' undeclared (first use in this function)
+   55 |   setLow(GPODPin[i]);
+      |          ^~~~~~~
+../Core/Src/main.c:55:10: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+22:51:33 Build Failed. 2 errors, 1 warnings. (took 224ms)
+

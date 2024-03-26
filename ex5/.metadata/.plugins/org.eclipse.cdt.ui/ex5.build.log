@@ -1,0 +1,75 @@
+14:56:26 **** Incremental Build of configuration Debug for project ex5 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:241,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Core/Src/main.c: In function 'main':
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:87:36: error: called object is not a function or function pointer
+   87 | #define GPIO_PIN_5                 ((uint16_t)0x0020)  /* Pin 5 selected    */
+      |                                    ^
+../Core/Inc/main.h:61:23: note: in expansion of macro 'GPIO_PIN_5'
+   61 | #define LED_RED_1_Pin GPIO_PIN_5
+      |                       ^~~~~~~~~~
+../Core/Src/main.c:182:31: note: in expansion of macro 'LED_RED_1_Pin'
+  182 |      HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin LED_GREEN_1_Pin, GPIO_PIN_RESET);
+      |                               ^~~~~~~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:88:36: error: called object is not a function or function pointer
+   88 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
+      |                                    ^
+../Core/Inc/main.h:63:26: note: in expansion of macro 'GPIO_PIN_6'
+   63 | #define LED_YELLOW_1_Pin GPIO_PIN_6
+      |                          ^~~~~~~~~~
+../Core/Src/main.c:188:31: note: in expansion of macro 'LED_YELLOW_1_Pin'
+  188 |      HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin LED_RED_1_Pin, GPIO_PIN_RESET);
+      |                               ^~~~~~~~~~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:89:36: error: called object is not a function or function pointer
+   89 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:65:25: note: in expansion of macro 'GPIO_PIN_7'
+   65 | #define LED_GREEN_1_Pin GPIO_PIN_7
+      |                         ^~~~~~~~~~
+../Core/Src/main.c:194:31: note: in expansion of macro 'LED_GREEN_1_Pin'
+  194 |      HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin LED_YELLOW_1_Pin, GPIO_PIN_RESET);
+      |                               ^~~~~~~~~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:90:36: error: called object is not a function or function pointer
+   90 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:83:23: note: in expansion of macro 'GPIO_PIN_8'
+   83 | #define LED_RED_2_Pin GPIO_PIN_8
+      |                       ^~~~~~~~~~
+../Core/Src/main.c:210:33: note: in expansion of macro 'LED_RED_2_Pin'
+  210 |        HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin LED_GREEN_2_Pin, GPIO_PIN_RESET);
+      |                                 ^~~~~~~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:91:36: error: called object is not a function or function pointer
+   91 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
+      |                                    ^
+../Core/Inc/main.h:85:26: note: in expansion of macro 'GPIO_PIN_9'
+   85 | #define LED_YELLOW_2_Pin GPIO_PIN_9
+      |                          ^~~~~~~~~~
+../Core/Src/main.c:216:33: note: in expansion of macro 'LED_YELLOW_2_Pin'
+  216 |        HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin LED_RED_2_Pin, GPIO_PIN_RESET);
+      |                                 ^~~~~~~~~~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:92:36: error: called object is not a function or function pointer
+   92 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:87:25: note: in expansion of macro 'GPIO_PIN_10'
+   87 | #define LED_GREEN_2_Pin GPIO_PIN_10
+      |                         ^~~~~~~~~~~
+../Core/Src/main.c:222:33: note: in expansion of macro 'LED_GREEN_2_Pin'
+  222 |        HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin LED_YELLOW_2_Pin, GPIO_PIN_RESET);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'display7SEG':
+../Core/Src/main.c:87:1: warning: control reaches end of non-void function [-Wreturn-type]
+   87 | }
+      | ^
+../Core/Src/main.c: In function 'display7SEG2':
+../Core/Src/main.c:125:1: warning: control reaches end of non-void function [-Wreturn-type]
+  125 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+14:56:26 Build Failed. 7 errors, 2 warnings. (took 222ms)
+
